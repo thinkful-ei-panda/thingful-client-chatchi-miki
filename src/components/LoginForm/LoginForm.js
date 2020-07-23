@@ -14,7 +14,6 @@ export default class LoginForm extends Component {
     const { user_name, password } = ev.target
 
     console.log('login form submitted')
-    console.log({ user_name, password })
 
     TokenService.saveAuthToken(
       TokenService.makeBasicAuthToken(user_name.value, password.value)
@@ -22,7 +21,7 @@ export default class LoginForm extends Component {
 
     user_name.value = ''
     password.value = ''
-    // this.props.onLoginSuccess()
+    this.props.onLoginSuccess()
   }
 
   render() {
